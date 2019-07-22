@@ -20,7 +20,7 @@
   "scripts": {
     "build": "webpack",
     "watch": "npm run build -- --watch",
-    "serve": "nodemon webpack-dev-server --open",
+    "serve": "nodemon -w webpack.config.js -x webpack-dev-server",
     "postinstall": "node node_modules/bower/bin/bower install",
     "prestart": "npm install",
     "pretest": "npm install",
