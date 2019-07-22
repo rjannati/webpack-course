@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "bower": "^1.8.2",
+    "bower": "^1.8.8",
     "eslint": "^4.9.0",
     "http-server": "^0.10.0",
     "jasmine-core": "^2.8.0",
@@ -11,12 +11,18 @@
     "karma-chrome-launcher": "^2.2.0",
     "karma-firefox-launcher": "^1.0.1",
     "karma-jasmine": "^1.1.0",
-    "karma-junit-reporter": "^1.2.0"
+    "karma-junit-reporter": "^1.2.0",
+    "nodemon": "^1.19.1",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
   },
   "scripts": {
+    "build": "webpack",
+    "watch": "npm run build -- --watch",
+    "serve": "nodemon webpack-dev-server --open",
     "postinstall": "node node_modules/bower/bin/bower install",
     "prestart": "npm install",
-    "start": "http-server -c-1 -o",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js --single-run"
